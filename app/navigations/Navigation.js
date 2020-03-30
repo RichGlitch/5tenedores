@@ -7,40 +7,40 @@ import RestaurantsScreenStacks from "./RestaurantsStacks";
 import TopListScreenStacks from "./TopListsStacks";
 import SearchScreenStacks from "./SearchStacks";
 import AccountScreenStacks from "./AccountStacks";
-
+ 
 const NavigationStacks = createBottomTabNavigator(
   {
     Restaurants: {
       screen: RestaurantsScreenStacks,
-      defaultNavigationOptions: ({navigation }) => ({
+      NavigationOptions: () => ({
         tabBarLabel: "Restaurantes",
-        tabBarIcon: ({focused }) => (
+        tabBarIcon: ({ tinColor }) => (
           <Icon
             type="material-community"
             name="compass-outline"
             size={22}
-            color={focused}
+            color={tinColor}
           />
         )
       })
     },
     TopLists: {
         screen: TopListScreenStacks,
-        defaultNavigationOptions: () => ({
+        NavigationOptions: () => ({
           tabBarLabel: "Top Restaurantes",
-          tabBarIcon: ({focused }) => (
+          tabBarIcon: ({ tinColor }) => (
             <Icon
-              
               type="material-community"
-                    name="check-outline"
-                    color="red"
+              name="star-outline"
+              size={22}
+              color={tinColor}
             />
           )
         })
       },
       Search: {
           screen: SearchScreenStacks,
-          defaultNavigationOptions: () => ({
+          NavigationOptions: () => ({
             tabBarLabel: "Buscar",
             tabBarIcon: ({ tinColor }) => (
               <Icon
@@ -54,7 +54,7 @@ const NavigationStacks = createBottomTabNavigator(
         },
         Account: {
             screen: AccountScreenStacks,
-            defaultNavigationOptions: () => ({
+            NavigationOptions: () => ({
               tabBarLabel: "Buscar",
               tabBarIcon: ({ tinColor }) => (
                 <Icon
