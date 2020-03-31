@@ -1,10 +1,13 @@
 import React from 'react';
 import {StyleSheet,ScrollView, View, Text, ActivityIndicator,Image} from 'react-native';
 import {Button} from 'react-native-elements';
+import { withNavigation } from 'react-navigation';
 
-export default function UserGuest (){
+ function UserGuest (props){
     // const {text} = props;
-    // console.log(props);
+    const {navigation} = props;
+    console.log(props);
+
     return(
         <ScrollView style={styles.viewBody} centerContent={true}>
             <Image
@@ -23,13 +26,14 @@ export default function UserGuest (){
                     buttonStyle={styles.btnStyle}
                     containerStyle={styles.btnContainer}
                     title="Ver tu perfil"
-                    onPress={() => console.log("hola")}
+                    onPress={() => navigation.navigate("Login")}
                 />
             </View>
         </ScrollView>
     );
 }
 
+export default withNavigation(UserGuest);
 
 const styles= StyleSheet.create({
     viewBody : {
@@ -46,14 +50,14 @@ const styles= StyleSheet.create({
          fontSize:19,
          marginBottom:10,
          textAlign:"center",
-        //  color:"#00a680",
+        //  color:"#1B98E0",
         //  textTransform:"uppercase",
         //  marginTop:10
     },
     description:{
          marginBottom:20,
          textAlign:"center",
-        //  color:"#00a680",
+        //  color:"#1B98E0",
         //  textTransform:"uppercase",
         //  marginTop:10
     },
@@ -62,7 +66,7 @@ const styles= StyleSheet.create({
         alignItems:"center"
     },
     btnStyle:{
-        backgroundColor:"#00a680"
+        backgroundColor:"#1B98E0"
     },
     btnContainer:{
         width:"70%"
